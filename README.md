@@ -37,13 +37,26 @@ npm install
 
 ## Configuration
 
-The agent is configured to connect to socket-mcp server via npx. Set the Socket API key:
+The agent is configured to connect to socket-mcp server via npx. 
 
-```bash
-export SOCKET_API_KEY=your-api-key-here
-```
+1. Copy `.env.example` to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Add your Socket API key to `.env`:
+   ```bash
+   SOCKET_API_KEY=your-api-key-here
+   ```
+
+   Or set it as an environment variable:
+   ```bash
+   export SOCKET_API_KEY=your-api-key-here
+   ```
 
 The server will be automatically launched via `npx -y @socketsecurity/mcp@latest` when the client connects.
+
+**Note**: The test packages (`lodash@4.17.15` and `@crowdstrike/logscale-dashboard@1.205.1`) in `devDependencies` are included for testing socket-mcp's vulnerability detection capabilities.
 
 ## Usage
 

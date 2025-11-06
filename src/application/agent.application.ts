@@ -46,8 +46,16 @@ export class AgentApplication {
     
     // Read package.json
     const packageJsonPath = join(process.cwd(), 'package.json');
-    const packageJsonContent = readFileSync(packageJsonPath, 'utf-8');
-    const packageJson: PackageJson = JSON.parse(packageJsonContent);
+    let packageJson: PackageJson;
+    
+    try {
+      const packageJsonContent = readFileSync(packageJsonPath, 'utf-8');
+      packageJson = JSON.parse(packageJsonContent);
+    } catch (error) {
+      throw new Error(
+        `Failed to read package.json: ${error instanceof Error ? error.message : String(error)}`
+      );
+    }
 
     // Extract and format dependencies
     // depscore expects: { ecosystem, depname, version }
