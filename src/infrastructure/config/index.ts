@@ -13,7 +13,7 @@ export const config = {
     command: 'npx',
     args: ['-y', '@socketsecurity/mcp@latest'],
     env: {
-      SOCKET_API_KEY: process.env.SOCKET_API_KEY || 'sktsec_qlLPpDhBp-KnUOLEqY1p-OS-rowDt5oSBZ5JoKe8z9ih_api',
+      SOCKET_API_KEY: process.env.SOCKET_API_KEY || '',
     },
   } satisfies McpConfig,
 };

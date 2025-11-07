@@ -18,11 +18,16 @@ export class McpClientFactory {
     console.log(`Starting MCP server: ${config.command} ${config.args.join(' ')}`);
     
     // Use Homebrew's Node by prioritizing /opt/homebrew/bin in PATH
+    // This ensures compatibility with socket-mcp server requirements
     const env = {
       ...process.env,
       PATH: `/opt/homebrew/bin:${process.env.PATH || ''}`,
       ...config.env,
     };
+    
+    if (!config.env?.SOCKET_API_KEY) {
+      throw new Error('SOCKET_API_KEY environment variable is required');
+    }
     
     const transport = new StdioClientTransport({
       command: config.command,
