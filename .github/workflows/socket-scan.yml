@@ -1,0 +1,14 @@
+name: Socket Security Scan
+
+on:
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  socket-scan:
+    uses: tech-agents/.github/.github/workflows/socket-cli.yml@main
+    secrets:
+      SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
