@@ -21,7 +21,8 @@
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
-    "browserlist": "^1.0.1"
+    "browserlist": "^1.0.1",
+    "@react-native-community/cli-server-api": "4.8.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
