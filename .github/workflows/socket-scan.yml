@@ -17,3 +17,8 @@ jobs:
     uses: tech-agents/.github/.github/workflows/socket-cli.yml@main
     secrets:
       SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
+
+  socket-firewall:
+    uses: tech-agents/.github/.github/workflows/socket-action.yml@main
+    secrets:
+      SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
