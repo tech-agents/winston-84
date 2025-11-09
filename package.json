@@ -21,8 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
-    "browserlist": "^1.0.1",
-    "chalk": "5.6.1"
+    "browserlist": "^1.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
